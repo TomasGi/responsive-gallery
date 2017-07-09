@@ -1,0 +1,83 @@
+.content-footer {
+    .nav {
+        position: relative;
+        .button-menu {
+            @media only screen and (min-width: 768px) {
+                display: none;
+            }
+            position: fixed;
+            text-align: center;
+            bottom: -15px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            background: rgba(0, 0, 0, .9);
+            width: 100vw;
+            height: 55px; //overflow: hidden;
+            //z-index: 5;
+            i {
+                font-size: 40px;
+                color: #fff;
+            }
+        }
+        .main-menu {
+            position: fixed;
+            text-align: center;
+            overflow-y: scroll;
+            bottom: -100vh; //455
+            left: 0;
+            background: rgba(0, 0, 0, .9);
+            text-align: center;
+            padding-top: 15px;
+            height: 100vh;
+            animation: .6s slide-out forwards;
+            z-index: 200;
+            &.run {
+                animation: .6s slide-in forwards;
+            }
+            nav {
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    li {
+                        display: inline-block;
+                        width: 32%;
+                        margin: -10px -5px 0; //height: 600px;
+                        &.active-menu-element {
+                            img {
+                                filter: blur(5px);
+                            }
+                        }
+                        a {
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        //bottom: -200vh;
+        top: 100vh;
+    }
+    100% {
+       // bottom: 0vh;
+        top: 0vh;
+    }
+}
+
+@keyframes slide-out {
+    0% {
+       // bottom: 0vh;
+        top: 0vh;
+    }
+    100% {
+        top: 100vh;
+        //bottom: -200vh;
+    }
+}
